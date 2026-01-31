@@ -8,7 +8,6 @@
 #include<qdebug.h>
 #include<qdir.h>
 int main(int argc, char* argv[]) {
-    //在这！！！！！！！！！！
     QApplication app(argc, argv);
     // 设置应用程序信息
     app.setApplicationName("医院挂号管理系统");
