@@ -16,7 +16,6 @@ struct UserInfo {
     std::string address;
     std::string idCard;
     std::string department;
-
     // 添加默认构造函数
     UserInfo() = default;
 
