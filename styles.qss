@@ -1,0 +1,625 @@
+﻿
+/* ===== 全局基础样式 Global Base Styles ===== */
+* {
+    font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; /* 字体设置：微软雅黑优先，备选Segoe UI */
+}
+
+QWidget {
+    background-color: #f8fafc; /* 背景色：浅灰蓝色（雪白色） */
+    color: #334155; /* 文本颜色：深石板灰色 */
+    font-size: 14px; /* 基础字体大小 */
+    selection-background-color: #3b82f6; /* 选中背景色：宝蓝色 */
+    selection-color: white; /* 选中文本颜色：白色 */
+}
+
+/* ===== 主窗口 Main Window ===== */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #f0f9ff, stop:1 #e0f2fe); /* 渐变背景：从上到下浅蓝渐变 */
+}
+
+/* ===== 标题栏（自定义）Title Bar (Custom) ===== */
+#titleBar {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #1e40af, stop:1 #1e3a8a); /* 标题栏渐变：深蓝色系渐变 */
+    border-bottom: 2px solid #3b82f6; /* 底部边框：宝蓝色 */
+}
+
+#titleLabel {
+    color: white; /* 标题文字颜色：白色 */
+    font-size: 20px; /* 标题字体大小 */
+    font-weight: bold; /* 标题字体加粗 */
+    padding: 10px; /* 内边距 */
+}
+
+#userInfoLabel {
+    color: #dbeafe; /* 用户信息文字颜色：浅粉末蓝色 */
+    font-size: 14px; /* 用户信息字体大小 */
+}
+
+/* ===== 按钮系统 Button System ===== */
+/* 基础按钮 Base Button */
+QPushButton {
+    background-color: #3b82f6; /* 按钮背景色：宝蓝色 */
+    color: white; /* 按钮文字颜色：白色 */
+    border: none; /* 无边框 */
+    border-radius: 6px; /* 圆角半径：6像素 */
+    padding: 10px 20px; /* 内边距：上下10px，左右20px */
+    font-weight: 600; /* 字体粗细：半粗体 */
+    font-size: 14px; /* 字体大小 */
+    min-height: 20px; /* 最小高度：40像素 */
+    transition: all 0.2s; /* 过渡动画：所有属性0.2秒过渡 */
+}
+
+QPushButton:hover {
+    background-color: #2563eb; /* 鼠标悬停背景色：深宝蓝色 */
+    transform: translateY(-1px); /* 悬停上移效果：向上移动1像素 */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); /* 悬停阴影效果 */
+}
+
+QPushButton:pressed {
+    background-color: #1d4ed8; /* 鼠标按下背景色：更深宝蓝色 */
+    transform: translateY(0); /* 按下时恢复原位 */
+}
+
+QPushButton:disabled {
+    background-color: #94a3b8; /* 禁用状态背景色：浅石板灰色 */
+    color: #cbd5e1; /* 禁用状态文字颜色：更浅石板灰色 */
+}
+
+/* 主要操作按钮（如登录、提交）Primary Action Button */
+QPushButton.primary {
+    background-color: #3b82f6; /* 主要按钮背景色：宝蓝色 */
+    font-size: 16px; /* 主要按钮字体稍大 */
+    padding: 12px 24px; /* 主要按钮内边距更大 */
+}
+
+QPushButton.primary:hover {
+    background-color: #2563eb; /* 主要按钮悬停色：深宝蓝色 */
+}
+
+/* 成功按钮（确认、完成）Success Button */
+QPushButton.success {
+    background-color: #10b981; /* 成功按钮背景色：翠绿色 */
+}
+
+QPushButton.success:hover {
+    background-color: #059669; /* 成功按钮悬停色：深翠绿色 */
+}
+
+/* 警告按钮（修改、编辑）Warning Button */
+QPushButton.warning {
+    background-color: #f59e0b; /* 警告按钮背景色：琥珀橙色 */
+}
+
+QPushButton.warning:hover {
+    background-color: #d97706; /* 警告按钮悬停色：深琥珀橙色 */
+}
+
+/* 危险按钮（删除、取消）Danger Button */
+QPushButton.danger {
+    background-color: #ef4444; /* 危险按钮背景色：红宝石红色 */
+}
+
+QPushButton.danger:hover {
+    background-color: #dc2626; /* 危险按钮悬停色：深红宝石红色 */
+}
+
+/* 次要按钮（刷新、返回）Secondary Button */
+QPushButton.secondary {
+    background-color: #64748b; /* 次要按钮背景色：石板灰色 */
+}
+
+QPushButton.secondary:hover {
+    background-color: #475569; /* 次要按钮悬停色：深石板灰色 */
+}
+
+/* ===== 表单控件 Form Controls ===== */
+/* 标签 Labels */
+QLabel {
+    color: #1e293b; /* 标签文字颜色：深蓝色 */
+    font-size: 14px; /* 标签字体大小 */
+    font-weight: 500; /* 标签字体中等粗细 */
+}
+
+QLabel.title {
+    font-size: 24px; /* 标题标签字体大小 */
+    font-weight: bold; /* 标题标签字体加粗 */
+    color: #1e40af; /* 标题标签颜色：深海军蓝色 */
+    padding: 10px 0; /* 标题标签内边距：上下10px，左右0 */
+}
+
+QLabel.subtitle {
+    font-size: 18px; /* 副标题标签字体大小 */
+    font-weight: 600; /* 副标题标签半粗体 */
+    color: #334155; /* 副标题标签颜色：深石板灰色 */
+    padding: 8px 0; /* 副标题标签内边距：上下8px，左右0 */
+}
+
+/* 输入框 Input Fields */
+QLineEdit, QTextEdit {
+    background-color: white; /* 输入框背景色：白色 */
+    border: 2px solid #cbd5e1; /* 输入框边框：浅石板灰色 */
+    border-radius: 6px; /* 输入框圆角半径 */
+    padding: 10px 12px; /* 输入框内边距 */
+    font-size: 14px; /* 输入框字体大小 */
+    min-height: 20px; /* 输入框最小高度 */
+    color: #1e293b; /* 输入框文字颜色：深蓝色 */
+    selection-background-color: #3b82f6; /* 输入框选中背景色：宝蓝色 */
+    selection-color: white; /* 输入框选中文字颜色：白色 */
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border-color: #3b82f6; /* 输入框焦点边框色：宝蓝色 */
+    background-color: #f0f9ff; /* 输入框焦点背景色：浅冰蓝色 */
+    outline: none; /* 去除默认焦点轮廓线 */
+}
+
+QLineEdit[echoMode="2"] {
+    lineedit-password-character: "●"; /* 密码输入框显示字符：实心圆点 */
+}
+
+QLineEdit:disabled, QTextEdit:disabled {
+    background-color: #f1f5f9; /* 禁用输入框背景色：雪白色 */
+    color: #94a3b8; /* 禁用输入框文字颜色：浅石板灰色 */
+    border-color: #e2e8f0; /* 禁用输入框边框色：更浅石板灰色 */
+}
+
+/* ========== QComboBox - 医疗主题（无黑边框强化版） ========== */
+
+/* 主控件样式 */
+QComboBox {
+    background-color: white;
+    border: 2px solid #3b82f6;          /* 宝蓝色边框 */
+    border-radius: 6px;
+    padding: 10px 40px 10px 12px;       /* 右侧留出箭头空间 */
+    font-size: 14px;
+    color: #1e293b;
+    min-height: 20px;
+    selection-background-color: #3b82f6;
+    selection-color: white;
+    outline: none;                      /* 关键：禁用焦点轮廓 */
+}
+
+QComboBox:hover {
+    background-color: #f0f9ff;
+    border-color: #2563eb;
+}
+
+QComboBox:focus {
+    border-color: #1d4ed8;
+    background-color: white;
+    outline: none;                      /* 再次强调：无轮廓 */
+}
+
+/* 下拉箭头区域 */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 40px;
+    border: none;                       /* 必须为 none */
+    background: transparent;            /* 透明背景，避免覆盖主背景 */
+}
+
+QComboBox::down-arrow {
+    image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%233b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    width: 16px;
+    height: 16px;
+}
+
+/* ========== 下拉菜单（关键：清除所有黑边） ========== */
+QComboBox QAbstractItemView {
+    border: none;                       /* ⚠️ 核心：必须为 none */
+    background-color: white;
+    color: #334155;
+    font-size: 14px;
+    padding: 4px;
+    margin: 0;                          /* 消除外边距 */
+    outline: 0;
+    /* 禁用滚动条边框（防止黑线） */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 菜单项 */
+QComboBox QAbstractItemView::item {
+    padding: 12px 16px;
+    background-color: white;
+    border-radius: 4px;
+    margin: 2px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+QComboBox QAbstractItemView::item:last-child {
+    border-bottom: none;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #f0f9ff;
+    color: #1d4ed8;
+    border: 1px solid #3b82f6;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #3b82f6, stop:1 #1d4ed8);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+/* ========== 额外防护：清除内部子控件边框 ========== */
+QComboBox QLineEdit,
+QComboBox QLabel {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== 表格系统 Table System ===== */
+QTableWidget {
+    background-color: white; /* 表格背景色：白色 */
+    alternate-background-color: #f8fafc; /* 交替行背景色：雪白色 */
+    selection-background-color: #3b82f6; /* 选中行背景色：宝蓝色 */
+    selection-color: white; /* 选中行文字颜色：白色 */
+    border: 1px solid #e2e8f0; /* 表格边框：浅灰色 */
+    border-radius: 8px; /* 表格圆角半径 */
+    gridline-color: #f1f5f9; /* 表格网格线颜色：雪白色 */
+    font-size: 13px; /* 表格字体大小 */
+}
+
+QTableWidget::item {
+    padding: 12px 8px; /* 表格单元格内边距 */
+    border-bottom: 1px solid #f1f5f9; /* 表格单元格底部边框 */
+}
+
+QTableWidget::item:selected {
+    background-color: #3b82f6 ; /* 选中单元格背景色：宝蓝色 */
+    color: white; /* 选中单元格文字颜色：白色 */
+}
+
+QTableWidget::item:hover {
+    background-color: #f0f9ff; /* 单元格悬停背景色：浅冰蓝色 */
+}
+QTableWidget::item:selected::hover{
+    background-color: #3b82f6 ;
+}
+/* 表头 Table Header */
+QHeaderView {
+    background-color: transparent; /* 表头背景透明 */
+}
+
+QHeaderView::section {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #1e40af, stop:1 #1e3a8a); /* 表头单元格背景渐变：深海军蓝色系 */
+    color: white; /* 表头文字颜色：白色 */
+    padding: 14px 12px; /* 表头单元格内边距 */
+    border: none; /* 表头单元格无边框 */
+    font-weight: 600; /* 表头字体半粗体 */
+    font-size: 13px; /* 表头字体大小 */
+    border-right: 1px solid #3b82f6; /* 表头单元格右边框：宝蓝色 */
+}
+
+QHeaderView::section:last-child {
+    border-right: none; /* 最后一列表头无右边框 */
+}
+
+QHeaderView::section:checked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #2563eb, stop:1 #1e40af); /* 选中表头单元格背景渐变：宝蓝色系 */
+}
+
+/* ===== 分组框 Group Box ===== */
+QGroupBox {
+    border: 2px solid #3b82f6; /* 分组框边框：宝蓝色 */
+    border-radius: 10px; /* 分组框圆角半径 */
+    margin-top: 10px; /* 分组框顶部外边距 */
+    padding-top: 15px; /* 分组框顶部内边距（为标题留空间） */
+    font-weight: 600; /* 分组框标题字体半粗体 */
+    font-size: 16px; /* 分组框标题字体大小 */
+    color: #1e40af; /* 分组框标题颜色：深海军蓝色 */
+    background-color: white; /* 分组框背景色：白色 */
+    padding: 10px 10px 10px; /* 分组框内边距 */
+}
+
+
+QGroupBox::title {
+    subcontrol-origin: margin; /* 标题定位基于外边距 */
+    subcontrol-position: top left; /* 标题位置：左上角 */
+    left: 15px; /* 标题左侧偏移 */
+    padding: 0 12px; /* 标题内边距：左右12px，上下0 */
+    background-color: white; /* 标题背景色：白色（创建缺口效果） */
+    color: #1e40af; /* 标题文字颜色：深海军蓝色 */
+    font-weight: bold; /* 标题字体加粗 */
+    font-size: 16px; /* 标题字体大小 */
+}
+
+/* ===== 标签页 Tab Widget ===== */
+QTabWidget::pane {
+    border: 1px solid #e2e8f0; /* 标签页面板边框：浅灰色 */
+    background-color: white; /* 标签页面板背景色：白色 */
+    border-radius: 8px; /* 标签页面板圆角半径 */
+    margin-top: -1px; /* 标签页面板负外边距（与标签栏重叠） */
+}
+
+QTabWidget::tab-bar {
+    alignment: left; /* 标签栏对齐方式：左对齐 */
+}
+
+QTabBar::tab {
+    background-color: #f1f5f9; /* 标签背景色：雪白色 */
+    border: 1px solid #e2e8f0; /* 标签边框：浅灰色 */
+    border-bottom: none; /* 标签底部无边框 */
+    padding: 12px 24px; /* 标签内边距 */
+    margin-right: 4px; /* 标签右侧外边距 */
+    border-top-left-radius: 8px; /* 标签左上圆角半径 */
+    border-top-right-radius: 8px; /* 标签右上圆角半径 */
+    color: #64748b; /* 标签文字颜色：石板灰色 */
+    font-weight: 600; /* 标签字体半粗体 */
+    font-size: 14px; /* 标签字体大小 */
+    min-width: 120px; /* 标签最小宽度 */
+}
+
+QTabBar::tab:selected {
+    background-color: white; /* 选中标签背景色：白色 */
+    border-bottom: 3px solid #3b82f6; /* 选中标签底部边框：宝蓝色粗线 */
+    color: #1e40af; /* 选中标签文字颜色：深海军蓝色 */
+    font-weight: bold; /* 选中标签字体加粗 */
+}
+
+QTabBar::tab:hover {
+    background-color: #e0f2fe; /* 标签悬停背景色：浅天蓝色 */
+    color: #3b82f6; /* 标签悬停文字颜色：宝蓝色 */
+}
+
+/* ===== 滚动条 Scrollbar ===== */
+QScrollBar:vertical {
+    border: none; /* 垂直滚动条无边框 */
+    background-color: #f1f5f9; /* 垂直滚动条背景色：雪白色 */
+    width: 10px; /* 垂直滚动条宽度 */
+    border-radius: 5px; /* 垂直滚动条圆角半径 */
+    margin: 2px; /* 垂直滚动条外边距 */
+}
+
+QScrollBar::handle:vertical {
+    background-color: #94a3b8; /* 垂直滚动条滑块背景色：浅石板灰色 */
+    border-radius: 5px; /* 垂直滚动条滑块圆角半径 */
+    min-height: 30px; /* 垂直滚动条滑块最小高度 */
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #64748b; /* 垂直滚动条滑块悬停背景色：石板灰色 */
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    border: none; /* 垂直滚动条上下箭头区域无边框 */
+    background: none; /* 垂直滚动条上下箭头区域无背景 */
+    height: 0; /* 垂直滚动条上下箭头区域高度为0（隐藏） */
+}
+
+/* ===== 状态栏 Status Bar ===== */
+QStatusBar {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #1e293b, stop:1 #0f172a); /* 状态栏背景渐变：深灰色系 */
+    color: #cbd5e1; /* 状态栏文字颜色：浅石板灰色 */
+    font-size: 12px; /* 状态栏字体大小 */
+    padding: 8px 15px; /* 状态栏内边距 */
+    border-top: 1px solid #334155; /* 状态栏顶部边框：深石板灰色 */
+}
+
+QStatusBar QLabel {
+    color: #e2e8f0; /* 状态栏标签文字颜色：很浅的灰色 */
+    font-size: 12px; /* 状态栏标签字体大小 */
+}
+
+/* ===== 日期选择器 Date Picker ===== */
+QDateEdit {
+    border: 2px solid #cbd5e1; /* 日期选择器边框：浅石板灰色 */
+    border-radius: 6px; /* 日期选择器圆角半径 */
+    padding: 10px 12px; /* 日期选择器内边距 */
+    background-color: white; /* 日期选择器背景色：白色 */
+    font-size: 14px; /* 日期选择器字体大小 */
+    min-height: 40px; /* 日期选择器最小高度 */
+}
+
+QDateEdit:hover {
+    border-color: #94a3b8; /* 日期选择器悬停边框色：浅石板灰色 */
+}
+
+QDateEdit:focus {
+    border-color: #3b82f6; /* 日期选择器焦点边框色：宝蓝色 */
+    background-color: #f0f9ff; /* 日期选择器焦点背景色：浅冰蓝色 */
+}
+
+QDateEdit::drop-down {
+    subcontrol-origin: padding; /* 下拉箭头区域定位基于内边距 */
+    subcontrol-position: top right; /* 下拉箭头区域位置：右上角 */
+    width: 40px; /* 下拉箭头区域宽度 */
+    border-left: 2px solid #e2e8f0; /* 下拉箭头区域左边框：浅灰色 */
+}
+
+QDateEdit::down-arrow {
+    image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%233b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'); /* 日期选择器下拉箭头SVG图标 */
+    width: 16px; /* 下拉箭头宽度 */
+    height: 16px; /* 下拉箭头高度 */
+}
+
+/* ===== 复选框和单选框 Checkbox & Radio Button ===== */
+QCheckBox, QRadioButton {
+    spacing: 10px; /* 控件与文字间距 */
+    font-size: 14px; /* 字体大小 */
+    color: #334155; /* 文字颜色：深石板灰色 */
+    font-weight: 500; /* 字体中等粗细 */
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 20px; /* 指示器宽度 */
+    height: 20px; /* 指示器高度 */
+}
+
+QCheckBox::indicator:unchecked {
+    border: 2px solid #cbd5e1; /* 未选中复选框边框：浅石板灰色 */
+    border-radius: 4px; /* 未选中复选框圆角半径 */
+    background-color: white; /* 未选中复选框背景色：白色 */
+}
+
+QCheckBox::indicator:checked {
+    border: 2px solid #3b82f6; /* 选中复选框边框：宝蓝色 */
+    border-radius: 4px; /* 选中复选框圆角半径 */
+    background-color: #3b82f6; /* 选中复选框背景色：宝蓝色 */
+    image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'); /* 选中状态对勾图标 */
+}
+
+QRadioButton::indicator:unchecked {
+    border: 2px solid #cbd5e1; /* 未选中单选框边框：浅石板灰色 */
+    border-radius: 10px; /* 未选中单选框圆角半径（圆形） */
+    background-color: white; /* 未选中单选框背景色：白色 */
+}
+
+QRadioButton::indicator:checked {
+    border: 2px solid #3b82f6; /* 选中单选框边框：宝蓝色 */
+    border-radius: 10px; /* 选中单选框圆角半径（圆形） */
+    background-color: white; /* 选中单选框背景色：白色 */
+}
+
+QRadioButton::indicator:checked::after {
+    content: ''; /* 伪元素内容为空 */
+    display: block; /* 块级显示 */
+    width: 10px; /* 内圆宽度 */
+    height: 10px; /* 内圆高度 */
+    margin: 3px; /* 内圆外边距（居中） */
+    border-radius: 5px; /* 内圆圆角半径（圆形） */
+    background-color: #3b82f6; /* 内圆背景色：宝蓝色 */
+}
+
+/* ===== 微调框 Spin Box ===== */
+QSpinBox, QDoubleSpinBox {
+    border: 2px solid #cbd5e1; /* 微调框边框：浅石板灰色 */
+    border-radius: 6px; /* 微调框圆角半径 */
+    padding: 10px; /* 微调框内边距 */
+    background-color: white; /* 微调框背景色：白色 */
+    min-height: 40px; /* 微调框最小高度 */
+    color: #334155; /* 微调框文字颜色：深石板灰色 */
+}
+
+QSpinBox:hover, QDoubleSpinBox:hover {
+    border-color: #94a3b8; /* 微调框悬停边框色：浅石板灰色 */
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border-color: #3b82f6; /* 微调框焦点边框色：宝蓝色 */
+    background-color: #f0f9ff; /* 微调框焦点背景色：浅冰蓝色 */
+}
+
+QSpinBox::up-button, QDoubleSpinBox::up-button,
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    background-color: #f1f5f9; /* 增减按钮背景色：雪白色 */
+    border: 1px solid #e2e8f0; /* 增减按钮边框：浅灰色 */
+    border-radius: 3px; /* 增减按钮圆角半径 */
+    width: 24px; /* 增减按钮宽度 */
+}
+
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
+    background-color: #e2e8f0; /* 增减按钮悬停背景色：浅灰色 */
+}
+
+/* ===== 工具提示 Tooltip ===== */
+QToolTip {
+    background-color: #1e293b; /* 工具提示背景色：深蓝色 */
+    color: white; /* 工具提示文字颜色：白色 */
+    border: 1px solid #334155; /* 工具提示边框：深石板灰色 */
+    padding: 8px 12px; /* 工具提示内边距 */
+    border-radius: 6px; /* 工具提示圆角半径 */
+    font-size: 12px; /* 工具提示字体大小 */
+    opacity: 240; /* 工具提示透明度（接近不透明） */
+}
+
+/* ===== 进度条 Progress Bar ===== */
+QProgressBar {
+    border: 1px solid #cbd5e1; /* 进度条边框：浅石板灰色 */
+    border-radius: 4px; /* 进度条圆角半径 */
+    text-align: center; /* 进度条文字居中 */
+    background-color: #f1f5f9; /* 进度条背景色：雪白色 */
+    height: 24px; /* 进度条高度 */
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                               stop:0 #3b82f6, stop:1 #1d4ed8); /* 进度条进度块渐变：宝蓝色系 */
+    border-radius: 3px; /* 进度条进度块圆角半径 */
+}
+
+/* ===== 分隔线 Separator Lines ===== */
+QFrame[frameShape="4"] { /* HLine 水平分隔线 */
+    background-color: #e2e8f0; /* 水平分隔线颜色：浅灰色 */
+    max-height: 1px; /* 水平分隔线最大高度（细线） */
+    border: none; /* 水平分隔线无边框 */
+}
+
+QFrame[frameShape="5"] { /* VLine 垂直分隔线 */
+    background-color: #e2e8f0; /* 垂直分隔线颜色：浅灰色 */
+    max-width: 1px; /* 垂直分隔线最大宽度（细线） */
+    border: none; /* 垂直分隔线无边框 */
+}
+
+/* ===== 特殊医疗主题元素 Special Medical Theme Elements ===== */
+/* 紧急状态指示器 Urgent Status Indicator */
+.urgent {
+    color: #dc2626; /* 紧急状态文字颜色：深红色 */
+    font-weight: bold; /* 紧急状态字体加粗 */
+    background-color: #fef2f2; /* 紧急状态背景色：浅红色 */
+    border: 2px solid #fecaca; /* 紧急状态边框：浅红色 */
+    border-radius: 4px; /* 紧急状态圆角半径 */
+    padding: 4px 8px; /* 紧急状态内边距 */
+}
+
+/* 完成状态 Completed Status */
+.completed {
+    color: #059669; /* 完成状态文字颜色：深绿色 */
+    font-weight: bold; /* 完成状态字体加粗 */
+    background-color: #d1fae5; /* 完成状态背景色：浅绿色 */
+    border: 2px solid #a7f3d0; /* 完成状态边框：浅绿色 */
+    border-radius: 4px; /* 完成状态圆角半径 */
+    padding: 4px 8px; /* 完成状态内边距 */
+}
+
+/* 待处理状态 Pending Status */
+.pending {
+    color: #d97706; /* 待处理状态文字颜色：深橙色 */
+    font-weight: bold; /* 待处理状态字体加粗 */
+    background-color: #fffbeb; /* 待处理状态背景色：浅橙色 */
+    border: 2px solid #fde68a; /* 待处理状态边框：浅橙色 */
+    border-radius: 4px; /* 待处理状态圆角半径 */
+    padding: 4px 8px; /* 待处理状态内边距 */
+}
+
+/* ===== 布局间距 Layout Spacing ===== */
+QWidget > QWidget {
+    margin: 2px; /* 子控件外边距 */
+}
+
+QFormLayout > QLabel {
+    margin-right: 10px; /* 表单布局中标签右侧外边距 */
+}
+
+QHBoxLayout, QVBoxLayout {
+    spacing: 10px; /* 水平和垂直布局控件间距 */
+    margin: 5px; /* 布局外边距 */
+}
+
+/* ===== 特定窗口调整 Specific Window Adjustments ===== */
+/* 登录窗口特殊样式 Login Window Special Styles */
+LoginWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #dbeafe, stop:1 #e0f2fe); /* 登录窗口渐变背景：对角线蓝色渐变 */
+}
+
+/* 主窗口标签页特殊样式 Main Window Tab Special Styles */
+MainWindow QTabWidget {
+    background-color: white; /* 主窗口标签页背景色：白色 */
+    border-radius: 8px; /* 主窗口标签页圆角半径 */
+}
